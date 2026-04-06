@@ -1,0 +1,152 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <version>2.7.3</version>
+  </parent>
+
+  <groupId>com.sky</groupId>
+  <artifactId>sky-take-out</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>sky-take-out</name>
+  <url>http://maven.apache.org</url>
+  <modules>
+    <module>sky-common</module>
+  </modules>
+
+  <properties>
+    <mybatis.spring>2.2.0</mybatis.spring>
+    <lombok>1.18.20</lombok>
+    <fastjson>1.2.76</fastjson>
+    <commons.lang>2.6</commons.lang>
+    <druid>1.2.1</druid>
+    <pagehelper>1.3.0</pagehelper>
+    <aliyun.sdk.oss>3.10.2</aliyun.sdk.oss>
+    <knife4j>3.0.2</knife4j>
+    <aspectj>1.9.4</aspectj>
+    <jjwt>0.9.1</jjwt>
+    <jaxb-api>2.3.1</jaxb-api>
+    <poi>3.16</poi>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>${mybatis.spring}</version> <!--2.2.0-->
+      </dependency>
+
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson}</version>  <!--1.2.76-->    <!--Java 对象 转成 JSON 字符串； JSON 字符串 转回 Java 对象；  把 JSON 转成 集合 / 复杂对象-->
+      </dependency>
+
+
+<!--      字符串判断（最常用）
+      对象判空
+      日期工具
+      数组 / 集合操作
+      随机数、序列化、反射简化-->
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>${commons.lang}</version>  <!--2.6-->
+      </dependency>
+
+      <!--给 SpringBoot 提供高性能、带监控、带安全防护的数据库连接池-->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${druid}</version>  <!--1.2.1-->
+      </dependency>
+
+      <!--PageHelper = 万能、极简的 MyBatis 分页插件-->
+      <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper-spring-boot-starter</artifactId>
+        <version>${pagehelper}</version>  <!--1.3.0-->
+      </dependency>
+
+
+      <!--Knife4j = SpringBoot 自动 API 文档 + 在线调试工具= Swagger UI 的超级加强版-->
+      <dependency>
+        <groupId>com.github.xiaoymin</groupId>
+        <artifactId>knife4j-spring-boot-starter</artifactId>
+        <version>${knife4j}</version>  <!--3.0.2-->
+      </dependency>
+
+<!--      aspectjrt = AOP 运行时支撑包
+      只要引入了 aspectjweaver，它会自动依赖 aspectjrt-->
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectj}</version> <!--1.9.4-->
+      </dependency>
+
+      <!--让 Spring AOP 切面编程能正常运行，用来做统一日志、权限校验、接口耗时统计、事务管理等-->
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectj}</version> <!--1.9.4-->
+      </dependency>
+
+<!--      专门用来在 Java 中生成和解析 JWT（JSON Web Token）
+      也就是后端项目里做登录鉴权、用户身份认证的核心工具包-->
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt</artifactId>
+        <version>${jjwt}</version>  <!--0.9.1-->
+      </dependency>
+
+      <dependency>
+        <groupId>com.aliyun.oss</groupId>
+        <artifactId>aliyun-sdk-oss</artifactId>
+        <version>${aliyun.sdk.oss}</version> <!--3.10.2-->
+      </dependency>
+
+
+<!--      = Java XML 序列化工具= Java 9+ 环境的启动修复包
+      你项目引入它，99% 是为了不报错，不是为了写 XML！-->
+      <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>${jaxb-api}</version>  <!--2.3.1-->
+      </dependency>
+
+      <!-- poi -->
+
+      <!--poi = Java 操作 Excel 的官方工具库-->
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>${poi}</version>  <!--3.16--> <!--处理旧版 Excel：.xls（Excel 97-2003）-->
+      </dependency>
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId> <!--处理新版 Excel：.xlsx（Excel 2007+）-->
+        <version>${poi}</version>
+      </dependency>
+
+
+      <!--微信支付-->
+      <dependency>
+        <groupId>com.github.wechatpay-apiv3</groupId>
+        <artifactId>wechatpay-apache-httpclient</artifactId>
+        <version>0.4.8</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
