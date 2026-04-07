@@ -11,7 +11,11 @@ spring:
       url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: ${sky.datasource.username}
       password: ${sky.datasource.password}
-
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # 强制让 SpringBoot 使用【旧版兼容的路径匹配规则】，解决与 Knife4j/Swagger 的冲突，启动不报错。
+                                          #SpringBoot 2.6 以前默认用：ANT_PATH_MATCHER（老规则）所有框架都兼容。
+                                          # SpringBoot 2.6 以后默认改成：PATH_PATTERN_PARSER（新规则）但是 Knife4j / Swagger 不认识新规则→ 直接报空指针、启动失败！
 mybatis:
   #mapper配置文件
   mapper-locations: classpath:mapper/*.xml   # classpath: → 从项目的资源根目录开始（就是 resources 文件夹）  mapper/ → 进入 mapper 文件夹  *.xml → 匹配所有以 .xml 结尾的文件
