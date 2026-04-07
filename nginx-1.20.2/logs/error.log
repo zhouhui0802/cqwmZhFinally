@@ -13,3 +13,5 @@
 2023/07/08 20:14:17 [error] 99408#99960: *159 no live upstreams while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /api/dish/page?page=3&pageSize=10&status= HTTP/1.1", upstream: "http://localhost/admin/dish/page?page=3&pageSize=10&status=", host: "localhost", referrer: "http://localhost/"
 2023/07/08 20:14:25 [error] 99408#99960: *163 no live upstreams while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /api/shop/status HTTP/1.1", upstream: "http://localhost/admin/shop/status", host: "localhost", referrer: "http://localhost/"
 2026/04/06 15:19:04 [emerg] 14512#11892: CreateDirectory() "D:\Project\cqwmZhFinally\nginx-1.20.2/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2026/04/07 10:59:28 [emerg] 15120#15716: host not found in upstream "localhost" in D:\Project\cqwmZhFinally\nginx-1.20.2/conf/nginx.conf:69
+2026/04/07 11:05:28 [emerg] 12080#12388: host not found in upstream "localhost" in D:\Project\cqwmZhFinally\nginx-1.20.2/conf/nginx.conf:69

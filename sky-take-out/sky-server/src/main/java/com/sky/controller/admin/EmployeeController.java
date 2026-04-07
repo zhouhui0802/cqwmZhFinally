@@ -1,6 +1,7 @@
 package com.sky.controller.admin;
 
 import com.sky.constant.JwtClaimsConstant;
+import com.sky.dto.EmployeeDTO;
 import com.sky.dto.EmployeeLoginDTO;
 import com.sky.entity.Employee;
 import com.sky.properties.JwtProperties;
@@ -23,7 +24,7 @@ import java.util.Map;
 /**
  * 员工管理
  */
-@RestController
+@RestController   // 标识这是一个控制器，并且所有接口返回值自动转为 JSON，直接用于前后端分离项目
 @RequestMapping("/admin/employee")
 @Slf4j
 @Api(tags = "员工相关接口")
@@ -73,6 +74,20 @@ public class EmployeeController {
     @PostMapping("/logout")
     @ApiOperation("员工退出")
     public Result<String> logout() {
+        return Result.success();
+    }
+
+
+    /**
+     * 新增员工
+     * @param employeeDTO
+     * @return
+     */
+    @PostMapping
+    @ApiOperation("新增员工")
+    public Result save(@RequestBody EmployeeDTO employeeDTO){  //@RequestBody的作用 把前端传来的 JSON 格式请求体，自动封装成 Java 对象。
+        log.info("新增员工：{}",employeeDTO);
+        employeeService.save(employeeDTO);//该方法后续步骤会定义
         return Result.success();
     }
 
