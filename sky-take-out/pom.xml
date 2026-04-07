@@ -18,6 +18,7 @@
   <modules>
     <module>sky-common</module>
     <module>sky-pojo</module>
+    <module>sky-server</module>
   </modules>
 
   <properties>
