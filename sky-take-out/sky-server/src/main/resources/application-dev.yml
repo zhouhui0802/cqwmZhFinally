@@ -11,3 +11,8 @@ sky:
     access-key-id: LTAI5t9inmM7bgqd7mEj4WoS
     access-key-secret: e0LfexmJqQRqTdXGa2FoUeaSfsgtwD
     bucket-name: sky-take-out-zhouhui
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 10
