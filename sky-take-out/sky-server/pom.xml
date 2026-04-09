@@ -85,6 +85,9 @@
             <artifactId>knife4j-spring-boot-starter</artifactId>
         </dependency>
 
+<!--        Redis：是缓存数据库（实实在在存数据的地方）
+        Spring Cache：是缓存抽象框架 / 注解规范（一套统一的缓存使用规则）
+        二者结合起来使用，用Spring Cache中的注解代替Redis操作的代码-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
