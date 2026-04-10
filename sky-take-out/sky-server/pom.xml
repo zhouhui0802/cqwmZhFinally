@@ -102,6 +102,13 @@
         SpringBoot 实现实时通信、消息推送的启动器让后端能主动给前端发消息，而不是永远等前端来问。
         浏览器和服务器只握手一次，就一直保持连接
         不用前端轮询、不用刷新页面，后端可以：实时推送通知
+
+        HTTP协议和WebSocket协议对比：
+            HTTP是短连接
+            WebSocket是长连接
+            HTTP通信是单向的，基于请求响应模式
+            WebSocket支持双向通信
+            HTTP和WebSocket底层都是TCP连接
         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
